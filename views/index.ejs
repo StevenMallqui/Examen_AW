@@ -2,10 +2,31 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css'/>
+    <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="container">
+      <div class="col-lg-6 col-md-8 col-sm-8 offset-3 border border-primary">
+        <h1 class="text-primary text-center">ACCESO</h1>
+        <form method="POST" action="/cambio">
+          <div class="form-group">
+            <label for="user">Login:</label>
+            <input type="text" class="form-control" id="user" name="user">
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" name="password">
+          </div>
+          <button type="submit">Cambiar contraseña</button>
+          <div class="row d-flex justify-content-end pr-2 pb-2">
+            <button class="btn btn-primary">submit</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
   </body>
 </html>

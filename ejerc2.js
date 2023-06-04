@@ -5,28 +5,29 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
 
-
 //- - - - - - - - - - VISTAS Y USO DEL MOTOR DE PLANTILLAS - - - - - - - - - -
+
 const path = require("path");
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 //- - - - - - - - - - ARCHIVOS ESTÁTICOS - - - - - - - - - -
+
 app.use(express.static(path.join(__dirname, "public")));
 
-//- - - - - - - - - - PAGINA PRINCIPAL - - - - - - - - - -
+//____________________________________ EJERCICIO 2 ____________________________________
 
-app.get("/", (req, res) =>{
+//- - - - - - - - - - MIDDLEWARES - - - - - - - - - -
+
+app.get("/", (req, res)=>{
     res.status(200);
-    res.render("index", {
-        title: "AW-2023" ,
-        loginError: false
+    res.render("home",{
+        title: "CAMPAÑA NAVIDAD"
     });
 });
 
-app.post("/cambio", function(req, res){
-    
-});
+
+//_____________________________________________________________________________________
 
 //- - - - - - - - - - CONEXIÓN CON EL SERVIDOR - - - - - - - - - -
 

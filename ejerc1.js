@@ -15,6 +15,10 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use(express.static(path.join(__dirname, "public")));
 
+//- - - - - - - - - - VALIDAR - - - - - - - - - -
+
+const { check, validationResult} = require("express-validator");
+
 //____________________________________ EJERCICIO 1 ____________________________________
 
 //- - - - - - - - - - BASE DE DATOS - - - - - - - - - -
@@ -30,29 +34,54 @@ var usuarios = [
     "FLB04"}
 ]
 
-//- - - - - - - - - - ROUTERS - - - - - - - - - -
+//- - - - - - - - - - MIDDLEWARES - - - - - - - - - -
 
-app.get("/", (req, res) =>{
+app.get("/", (req, res)=>{
     res.status(200);
     res.render("index", {
-        title: "ACCESO"
+        title: "ACCESO",
+        loginError: false
     });
 });
 
-app.post("/cambio", function(req, res){
+app.post("/cambio", (req, res)=>{
     let existe = usuarios.filter(user => user.user === req.body.user && user.pass === req.body.password).length;
 
     if(existe){
+        res.status(200);
         res.render("cambio",{
-            title : "CAMBIO"
+            title: "CAMBIO",
+            errores: false
         });
     }else{
-        res.render("index",{
-            title: "ACCESO"
-        });
+        res.status(500);
+        res.render("index", {
+            title: "ACCESO",
+            loginError: true
+        });  
     }
 });
 
+app.post("/nueva-contrasena", [
+    check("pass", "La longitud debería ser mayor de 5 caracteres").isLength({min : 6}),
+    check("pass", "Debe contener 3 mayúsculas y 2 dígitos").matches(/^(?=(?:.*[A-Z].*){3})(?=(?:.*\d.*){2}).*$/gm),
+    check("repass").custom((value, {req}) =>{
+        if(value !== req.body.pass){
+            throw new Error("Las contraseñas no son iguales");
+        }
+        return true;
+    })
+], (req, res)=>{
+    const errores = validationResult(req);
+    if(errores.isEmpty()){
+        res.redirect("/");
+    }else{
+        res.render("cambio",{
+            title: "CAMBIO",
+            errores: errores.mapped()
+        });
+    }
+});
 
 //_____________________________________________________________________________________
 

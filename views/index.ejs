@@ -20,7 +20,10 @@
             <label for="password">Password:</label>
             <input type="password" class="form-control" id="password" name="password">
           </div>
-          <button type="submit">Cambiar contraseña</button>
+          <button type="submit" class="btn btn-link">Cambiar contraseña</button>
+          <% if(loginError){ %>
+            <p class="text-danger">El usuario o contraseña son incorrectos</p>
+          <% } %>
           <div class="row d-flex justify-content-end pr-2 pb-2">
             <button class="btn btn-primary">submit</button>
           </div>

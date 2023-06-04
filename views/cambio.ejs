@@ -10,15 +10,21 @@
   <body>
     <div class="container">
       <div class="col-lg-6 col-md-8 col-sm-8 offset-3 border border-primary">
-        <h1 class="text-primary text-center">ACCESO</h1>
-        <form method="POST" action="">
+        <h1 class="text-primary text-center">CAMBIO CONTRASEÑA</h1>
+        <form method="POST" action="/nueva-contrasena">
             <div class="form-group">
                 <label for="inputRecPassword">Password:</label>
-                <input type="password" class="form-control" id="inputRecPassword">
+                <input type="password" class="form-control" id="inputRecPassword" name="pass">
+                <% if (errores.pass){ %>
+                  <span class="text-danger"> <%= errores.pass.msg %> </span>  
+                <% } %>
             </div>
             <div class="form-group">
                 <label for="inputRecRPassword">Repetir Password:</label>
-                <input type="password" class="form-control" id="inputRecRPassword">
+                <input type="password" class="form-control" id="inputRecRPassword" name="repass">
+                <% if (errores.repass){ %>
+                  <span class="text-danger"> <%= errores.repass.msg %> </span>  
+                <% } %>
             </div>
                 <div class="row d-flex justify-content-end pr-2 pb-2">
                 <button type="submit" class="btn btn-primary">submit</button>

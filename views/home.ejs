@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css'/>
+    <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+        <div class="col-lg-8 offset-2  bg-info">
+            <h2 class="text-center text-white p-3">ENCUESTA PARA CLIENTES</h1>
+            <form>
+                <div class="row col-lg-8 col-md-8 col-sm-8 offset-2">
+                    <label for="rangoSelector">Rango de edad</label> 
+                    <select class="form-control" id="rangoSelector">
+                        <option value="1">Menor que 20</option>
+                        <option value="2">De 20 a 30</option>
+                        <option value="3">De 30 a 40</option>
+                        <option value="4">Mayor de 40</option>
+                    </select>
+                </div>
+                <div class="row col-lg-8 col-md-8 col-sm-8 offset-2 mt-2">
+                    <label for="canalSelector">Canal por el que les ha conocido</label> 
+                    <select class="form-control col-lg-12" id="canalSelector">
+                        <option value="1">Buscador de internet</option>
+                        <option value="2">Redes sociales</option>
+                        <option value="3">Campaña de prensa y tv</option>
+                        <option value="4">Amigos</option>
+                    </select> 
+                </div>
+                <div class="row col-lg-8 col-md-8 col-sm-8 offset-2 mt-2">
+                    <label for="lugarSelector">Lugar de residencia del cliente</label> 
+                    <select class="form-control" id="lugarSelector">
+                        <option value="1">Madrid</option>
+                        <option value="2">Comunidad de Madrid</option>
+                        <option value="3">Resto del territorio español</option>
+                        <option value="4">Fuera de España</option>
+                    </select> 
+                </div>
+                <div class="row d-flex justify-content-center p-3">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+  </body>
+</html>

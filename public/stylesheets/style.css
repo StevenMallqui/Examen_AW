@@ -25,3 +25,11 @@ img{
 .productos:hover{
   transform: scale(1.15);
 }
+
+.A{
+  height: 85%;
+}
+
+.B{
+  height: 15%;
+}

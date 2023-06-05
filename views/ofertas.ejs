@@ -12,11 +12,13 @@
         <div class="bg-dark p-3 mb-3">
             <h1 class="text-center text-white"><%=data.descripcion%></h1>
         </div>
-        <div class="row">
+        <div class="row offset-1">
             <% var i = 1; data.items.forEach(element => { %>
                 <div class="col-lg-3 col-md-3 col-sm-3 border bg-white productos m-3">
-                    <img src="/images/<%= element.imagen %>" height="350px" alt="">
-                    <div class="row bg-dark">
+                    <div class="row A">
+                        <img src="/images/<%= element.imagen %>" height="350px" alt="">
+                    </div>
+                    <div class="row bg-dark text-center B">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <span class="text-white"><%= element.nombre %></span>
                         </div>

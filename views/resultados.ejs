@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css'/>
+    <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+        <h1 class="text-center">RESULTADOS DE LAS ENCUESTAS</h1>
+        <% var i = 1; encuestas.forEach(element => { %>
+            <div class="col-lg-10 col-md-10 col-sm-10 offset-1 bg-success mt-3">
+              <h3 class="pt-2 text-white"> Encuesta <%= i %></h3>
+              <div class="row">
+                <div class="col-lg-4">
+                  <p class="pt-2">Rango: <%= element.edad %> </p>
+                </div>  
+                <div class="col-lg-4">
+                  <p class="pt-2">Canal: <%= element.canal %> </p>
+                </div>  
+                <div class="col-lg-4">
+                  <p class="pt-2">Lugar: <%= element.lugar%></p>
+                </div>
+              </div>  
+            </div>
+        <% i++ }); %>
+    </div>
+  </body>
+</html>

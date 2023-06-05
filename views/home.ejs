@@ -9,38 +9,41 @@
   </head>
   <body>
     <div class="container">
-        <div class="col-lg-8 offset-2  bg-info">
+        <div class="col-lg-8 offset-2 bg-info" id="panelEncuesta">
             <h2 class="text-center text-white p-3">ENCUESTA PARA CLIENTES</h1>
-            <form>
+            <form method="POST" action="/gracias">
                 <div class="row col-lg-8 col-md-8 col-sm-8 offset-2">
                     <label for="rangoSelector">Rango de edad</label> 
-                    <select class="form-control" id="rangoSelector">
-                        <option value="1">Menor que 20</option>
-                        <option value="2">De 20 a 30</option>
-                        <option value="3">De 30 a 40</option>
-                        <option value="4">Mayor de 40</option>
+                    <select class="form-control" id="rangoSelector" name="edad">
+                        <option value="Menor que 20">Menor que 20</option>
+                        <option value="De 20 a 30">De 20 a 30</option>
+                        <option value="De 30 a 40">De 30 a 40</option>
+                        <option value="Mayor de 40">Mayor de 40</option>
                     </select>
                 </div>
                 <div class="row col-lg-8 col-md-8 col-sm-8 offset-2 mt-2">
                     <label for="canalSelector">Canal por el que les ha conocido</label> 
-                    <select class="form-control col-lg-12" id="canalSelector">
-                        <option value="1">Buscador de internet</option>
-                        <option value="2">Redes sociales</option>
-                        <option value="3">Campaña de prensa y tv</option>
-                        <option value="4">Amigos</option>
+                    <select class="form-control col-lg-12" id="canalSelector" name="canal">
+                        <option value="Buscador de internet">Buscador de internet</option>
+                        <option value="Redes sociales">Redes sociales</option>
+                        <option value="Campaña de prensa y tv">Campaña de prensa y tv</option>
+                        <option value="Amigos">Amigos</option>
                     </select> 
                 </div>
                 <div class="row col-lg-8 col-md-8 col-sm-8 offset-2 mt-2">
                     <label for="lugarSelector">Lugar de residencia del cliente</label> 
-                    <select class="form-control" id="lugarSelector">
-                        <option value="1">Madrid</option>
-                        <option value="2">Comunidad de Madrid</option>
-                        <option value="3">Resto del territorio español</option>
-                        <option value="4">Fuera de España</option>
+                    <select class="form-control" id="lugarSelector" name="lugar">
+                        <option value="Madrid">Madrid</option>
+                        <option value="Comunidad de Madrid">Comunidad de Madrid</option>
+                        <option value="Resto del territorio español">Resto del territorio español</option>
+                        <option value="Fuera de España">Fuera de España</option>
                     </select> 
                 </div>
                 <div class="row d-flex justify-content-center p-3">
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <div class="col-lg-7 col-md-7 col-sm-7 d-flex justify-content-between offset-5">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <a href="/resultados" class="btn btn-primary" role="button">Resultados</a>
+                    </div>
                 </div>
             </form>
         </div>

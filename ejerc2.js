@@ -1,4 +1,5 @@
 "use strict";
+const { render } = require("ejs");
 const config = require("./config")
 const express = require("express");
 const app = express();
@@ -17,6 +18,10 @@ app.use(express.static(path.join(__dirname, "public")));
 
 //____________________________________ EJERCICIO 2 ____________________________________
 
+//- - - - - - - - - - DATOS - - - - - - - - - -
+
+var encuestas = [];
+
 //- - - - - - - - - - MIDDLEWARES - - - - - - - - - -
 
 app.get("/", (req, res)=>{
@@ -26,7 +31,22 @@ app.get("/", (req, res)=>{
     });
 });
 
+app.post("/gracias", (req, res)=> {
+    encuestas.push({
+        edad : req.body.edad,
+        canal: req.body.canal,
+        lugar: req.body.lugar 
+    });
+    console.log(encuestas);
+    res.render("gracias");
+});
 
+app.get("/resultados", (req, res)=>{
+    res.render("resultados", {
+       title: "RESULTADOS",
+       encuestas: encuestas 
+    });
+});
 //_____________________________________________________________________________________
 
 //- - - - - - - - - - CONEXIÓN CON EL SERVIDOR - - - - - - - - - -

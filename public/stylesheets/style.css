@@ -11,3 +11,17 @@ a {
 #panelEncuesta {
   border-radius: 30px;
 }
+
+img{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.productos{
+  transition: all 300ms;
+  position: relative;
+}
+
+.productos:hover{
+  transform: scale(1.15);
+}

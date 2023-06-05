@@ -1,0 +1,11 @@
+{
+    "descripcion": "Productos",
+    "items": [
+        {"nombre": "taza de Star Wars", "precio": 300, "imagen": "taza-de-star-wars.jpg"},
+        {"nombre": "FIFA 22 PS4", "precio": 100, "imagen": "fifa22_PS4.jpg"},
+        {"nombre": "Camiseta Marbel", "precio": 100, "imagen": "camiseta-marvel.jpg"},
+        {"nombre": "Figura Funco Stranger", "precio": 200, "imagen": "funco-lucas-stranger.jpg"},
+        {"nombre": "Botella Marvel", "precio": 120, "imagen": "botella-marvel.jpg"},
+        {"nombre": "Llavero Star-Wars", "precio": 120, "imagen": "llavero-star-wars.jpg"}
+    ]
+}
